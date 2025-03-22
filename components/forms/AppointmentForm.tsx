@@ -5,20 +5,17 @@ import { useRouter } from "next/navigation";
 import { Dispatch, SetStateAction, useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-
-import { Form, FormField } from "@/components/ui/form";
-
-import { getAppointmentSchema } from "@/lib/validation";
-
-
-import CustomFormField, { FormFieldType } from "../CustomFormField";
-import SubmitButton from "../SubmitButton";
-import { Doctors } from "@/constants";
-import { SelectItem } from "../ui/select";
 import Image from "next/image";
+
+import { Form } from "@/components/ui/form";
+import { Doctors } from "@/constants";
+import { getAppointmentSchema } from "@/lib/validation";
 import { Appointment } from "@/types/appwrite.types";
 import { createAppointment, updateAppointment } from "@/lib/actions/appointment.actions";
 
+import CustomFormField, { FormFieldType } from "../CustomFormField";
+import SubmitButton from "../SubmitButton";
+import { SelectItem } from "../ui/select";
 
 interface AppointmentProps {
   userId:string;
@@ -57,6 +54,7 @@ export const AppointmentForm = ({ userId , patientId,type,appointment,setOpen}:A
         break;
       case "cancel":
         status = "cancelled"
+        break;
       default:
         break;
     }
