@@ -1,6 +1,7 @@
 "use client"
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 import {
   AlertDialog,
@@ -17,9 +18,7 @@ import {
   InputOTPGroup,
   InputOTPSlot,
 } from "@/components/ui/input-otp"
-import Image from "next/image";
 import { decryptKey, encryptKey } from "@/lib/utils";
-
 
 export function PasskeyModal() {
   const router = useRouter();
@@ -31,7 +30,6 @@ export function PasskeyModal() {
   const encryptedKey = typeof window !== 'undefined' ? window.localStorage.getItem('accessKey') : null; 
 
   useEffect(()=>{
-
     const accessKey = encryptedKey && decryptKey(encryptedKey);
 
     if(path){
@@ -42,11 +40,13 @@ export function PasskeyModal() {
         setOpen(true)
       }
     }
-  },[encryptedKey])
+  },[encryptedKey, path, router])
+  
   const closeModel = ()=>{
     setOpen(false);
     router.push('/');
   }
+  
   const validatePasskey = (e: React.MouseEvent<HTMLButtonElement,MouseEvent>)=>{
     e.preventDefault();
 
@@ -110,6 +110,5 @@ export function PasskeyModal() {
         </AlertDialogFooter>
       </AlertDialogContent>
     </AlertDialog>
-
   )
 }
