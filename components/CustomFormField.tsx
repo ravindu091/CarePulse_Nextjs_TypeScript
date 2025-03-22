@@ -1,4 +1,5 @@
-/* eslint-disable no-unused-vars */
+
+import { useState } from "react";
 import { E164Number } from "libphonenumber-js/core";
 import Image from "next/image";
 import DatePicker from "react-datepicker";
@@ -17,8 +18,6 @@ import {
 import { Input } from "./ui/input";
 import { Select, SelectContent, SelectTrigger, SelectValue } from "./ui/select";
 import { Textarea } from "./ui/textarea";
-import { useState } from "react";
-
 
 export enum FormFieldType {
   INPUT = "input",
