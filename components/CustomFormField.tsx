@@ -1,7 +1,6 @@
 
-import { useState } from "react";
-import { E164Number } from "libphonenumber-js/core";
 import Image from "next/image";
+import { E164Number } from "libphonenumber-js/core";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { Control } from "react-hook-form";
@@ -45,7 +44,7 @@ interface CustomProps {
 }
 
 const RenderInput = ({ field, props }: { field: any; props: CustomProps }) => {
-  const [startDate , setStartDate] = useState('')
+
   switch (props.fieldType) {
     case FormFieldType.INPUT:
       return (

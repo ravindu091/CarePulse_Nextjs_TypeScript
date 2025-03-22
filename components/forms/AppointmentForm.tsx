@@ -1,17 +1,18 @@
 "use client";
 
+import Image from "next/image";
+
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "next/navigation";
 import { Dispatch, SetStateAction, useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-import Image from "next/image";
 
 import { Form } from "@/components/ui/form";
 import { Doctors } from "@/constants";
+import { createAppointment, updateAppointment } from "@/lib/actions/appointment.actions";
 import { getAppointmentSchema } from "@/lib/validation";
 import { Appointment } from "@/types/appwrite.types";
-import { createAppointment, updateAppointment } from "@/lib/actions/appointment.actions";
 
 import CustomFormField, { FormFieldType } from "../CustomFormField";
 import SubmitButton from "../SubmitButton";
