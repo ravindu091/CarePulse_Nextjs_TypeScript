@@ -40,7 +40,7 @@ export const AppointmentModal = ({
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
-        <Button variant={'ghost'} className={`capitalize ml-2 ${(type === 'schedule' ? 'text-green-500' : 'text-red-800')}`} >{type}</Button>
+        <Button variant={'ghost'} className={`ml-2 capitalize ${(type === 'schedule' ? 'text-green-500' : 'text-red-800')}`} >{type}</Button>
       </DialogTrigger>
       <DialogContent className="shad-dialog sm:max-w-md">
         <DialogHeader className="mb-4 space-y-3">
