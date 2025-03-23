@@ -1,9 +1,9 @@
 "use client";
 
 import Image from "next/image";
-
 import { useCallback } from "react";
 import { useDropzone } from 'react-dropzone';
+
 import { convertFileToUrl } from "@/lib/utils";
 
 type FileUploaderProps = {
